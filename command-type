@@ -1,0 +1,21 @@
+<명령어의 종류>
+
+SQL명령어는 특성에 따라 데이터 조작어(DML), 데이터 정의어(DDL), 데이터 제어어(DCL), 트랜잭션 제어어(TCL)로 나눠집니다.
+
+DML (data manipulation language) : SELECT / INSERT / UPDATE / DELETE
+  - 데이터베이스에서 데이터를 검색
+  - 데이터베이스 테이블에서 새로운 행을 삽입하고, 기존의 행을 수정하거나 삭제
+
+DDL (data definition language) : CREATE / ALTER / DROP / RENAME / TRUNCATE
+  - 테이블의 데이터를 정의하고 구조를 생성하거나 수정 또는 제거
+
+DCL (data control language) : GRANT / REVOKE
+  - 데이터베이스에 대해 접근 권한을 부여하거나 제거
+
+TCML (transaction control language) : COMMIT / ROLLBACK / SAVEPOINT
+  - DML로 실행한 변경 사항을 저장 관리
+
+<SQL로 할 수 있는것과 활용 영역>
+1. 애플리케이션 개발에 사용 (데이터 처리)
+2. 데이터를 추출, 수집, 가공한다.
+3. 데이터를 검색하고 분석할 수 있다.
