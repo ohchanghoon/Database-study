@@ -64,3 +64,36 @@ employees테이블에서 first_name이 David인 직원 정보를 출력하세요
 SELECT * FROM employees WHERE first_name = 'David';
 
 작은 따옴표를 사용했으므로 문자값 'David'와 'david'는 다른 의미입니다. (다른 결과)
+
+✅ 부등호 연산자 >=
+>= 연산자는 '크거나 같을 경우', 즉 '~이상'이라는 의미입니다. 
+
+[example-3-12]
+employees테이블에서 employee_id가 105 이상인 직원 정보를 출력하세요.
+SELECT * FROM employees WHERE employee_id >= 105;
+
+✅ SQL연산자 : 조회 조건 확장하기
+
+✔ SQL연산자 종류
+BETWEEN a AND b | a와 b사이에 값이 있다.(a, b 포함)
+IN(list)        | list중 어느 값이라도 일치한다.
+LIKE '비교문자'  | 비교 문자와 형태가 일치한다. (%, _ 사용)
+IS NULL         | null 값을 찾는다
+
+✔ BETWEEN 연산자
+두 값의 범위에 해당하는 행을 출력할 때 사용 합니다.
+a이상 b이하의 값을 조회하라는 의미로 >=, <=연산자를 함께 사용한 것과 같습니다.
+
+[example-3-13]
+employees테이블에서 salary가 10,000 이상이고 20,000 이하인 직원정보를 출력하세요.
+SELECT * FROM employees WHERE salary BETWEEN 10000 AND 20000;
+
+✔ IN 연산자
+조회하고자 하는 데이터 값이 여러 개일 때 사용합니다.
+= 연산자와 유사하지만 = 연산자는 조회 조건으로 데이터 값을 하나만 지정할 수 있는데 반해 IN연산자는 데이터 값을 여러 개,
+즉 목록(list)으로 지정할 수 있습니다. 여러 개의 값 목록 중에서 하나의 값이라도 만족하면 조건에 해당하는 결과를 출력합니다.
+이러한 연산자를 다중 행 연사나라고도 부릅니다.
+
+[example-3-14]
+employees테이블에서 salary가 10000, 17000, 24000 인 직원 정보를 출력하세요.
+SELECT * FROM employees WHERE salary IN (10000, 17000, 24000);
