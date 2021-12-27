@@ -116,6 +116,47 @@ SELECT * FROM employees WHERE job_id LIKE 'AD___';
 데이터 값이 NULL인 경우를 조회하고자 할 때 사용, NULL은 값이 지정되지 않았기 때문에 값이 없어 알 수 없는 값을 말하빈다.
 NULL은 0, 공백과는 다릅니다. 0은 숫자값이고 공백은 문자 값이므로 다른 유형의 데이터 값입니다.
 
-[example-3-16]
+[example-3-17]
 employees테이블에서 manager_id가 null 값인 직원 정보를 출력해 보세요.
 SELECT * FROM employees WHERE manager_id IS NULL;
+
+✅ 논리 연산자 : 조건 논리를 계속 연결하기
+논리 연산자는 여러 조건을 논리적으로 연결할 때 사용하는 연산자입니다. SQL문의 조건을 계속 추가해야 할 때 필수 연산자입니다.
+
+✔ 논리 연산자 종류
+AND | 기술 순서로 봤을 때 앞의 조건과 뒤의 조건이 동시에 참이어야 참이다. 즉, 앞뒤 조건을 동시에 만족해야함
+OR  | 앞의 조건이 참이거나 뒤의 조건이 참인 경우, 즉 한쪽이라도 참이면 참이다
+NOT | 뒤어 조건에 대해 반대 결과를 반환한다.
+
+[example-3-18]
+employees테이블에서 salary가 4000을 초과하면서, job_id가 IT_PROG인 값을 조회하세요.
+SELECT * FROM employees WHERE salary > 4000 AND job_id = 'IT_PROG';
+
+논리 연산자를 통해 조건식을 계속 붙여 만든 절을 조건 절이라고 하는데, 조건 절은 SQL문에서 보통 WHERE이하의 절을 말합니다.
+
+[example-3-19]
+employees테이블에서 salary가 4000을 초과하면서, job_id가 IT_PROG이거나 FI_ACCOUNT인 경우를 조회하세요.
+SELECT * FROM employees WHERE salary > 4000 AND job_id = 'IT_PROG' OR job_id = 'FI_ACCOUNT';
+
+OR연산자는 대용량 데이터베이스에서 조회 성능에 많은 영향을 줄 수 있으므로 주의해서 사용합니다.
+
+NOT연산자는 조건을 부정으로 만드는 역할을 하기 때문에 부정 연산자로 불립니다.
+부정 연산자에는 부정'비교 연산자'와 부정 'SQL연산자가'있습니다.
+
+✔ 부정연산자 종류
+!=                  | 같지 않다.
+<>                  | 같지 않다(ISO 표준).
+NOT 열 이름 =       | ~와 같지 않다
+NOT 열 이름 >       | ~보다 크지 않다.
+NOT BETWEEN a AND b | a와 b사이에 값이 없다
+NOT IN (list)       | list 값과 일치하지 않는다.
+IS NOT NULL         | null 값을 갖지 않는다.
+
+
+[example-3-20]
+employees테이블에서 employee_id가 105가 아닌 직원을 조회하세요.
+SELECT * FROM employees WHERE employee_id <> 105;
+
+[example-3-21]
+employees테이블에서 manager_id가 null값이 아닌 직원을 조회하세요.
+SELECT * FROM employees WHERE manager_id IS NOT NULL;
