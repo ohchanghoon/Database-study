@@ -1,0 +1,15 @@
+✅ 문자 타입 함수
+문자 타입 함수는 주로 데이터 조작에 쓰이며, 문자나 문자열 데이터는 작은 따옴표로 묶어 문자타입으로 표현
+
+LOWER     | 값을 소문자로 변환                    | LOWER('ABCD')             | abcd
+UPPER     | 값을 대문자로 변환                    | UPPER('abcd')             | ABCD
+INITCAP   | 첫번째 글자만 대문자로 변환            | INITCAP('abcd')           | Abcd     MySQL ❌ 
+SUBSTR    | 문자열 중 일부분 선택                 | SUBSTR('ABC', 1, 2)       | AB
+REPLACE   | 특정 문자열을 찾아 변환               | REPLACE('AB', 'A', 'E')   | EB
+CONCAT    | 두 문자열을 연결 (||연산자와 같음)     | CONCAT('A', 'B')          | AB
+LENGTH    | 문자열의 길이를 구한다                | LENGTH('AB')              | 2
+INSTR     | 명명된 문자의 위치를 구한다            | INSTR('ABCD', 'D')        | 4
+LPAD      | 왼쪽부터 특정 문자로 자리를 채운다     | LPAD('ABCD', 6, '*')      | **ABCD
+RPAD      | 오른쪽부터 특정 문자로 자리를 채운다   | RPAD('ABCD', 6, '*')      | ABCD**
+LTRIM     | 주어진 문자열의 왼쪽 문자를 지운다     | LTRIM('ABCD', 'AB')       | CD
+RTRIM     | 주어진 문자열의 왼쪽 문자를 지운다     | RTRIM('ABCD', 'CD')       | AB
