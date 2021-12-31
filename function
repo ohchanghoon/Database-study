@@ -23,3 +23,18 @@ MySQL은 데이터 값의 대소문자를 구분하기 때문에 데이터 출�
 [example-4-1]
 employees 테이블에서 last_name을 소문자와 대문자로 각각 출력하고, email의 첫 번째 문자는 대문자로 출력하세요.
 SELECT LOWER(last_name), UPPER(last_name), INITCAP(email) FROM employees
+
+✔ SUBSTR : 지정한 길이만큼 문자열 추출하기
+SUBSTR 함수는 데이터에서 지정된 길이만큼 문자열을 추출할 때 사용합니다.
+데이터 값이 이미 가공되어 데이터베이스에 저장되어 있는 경우라도 일부 문자열을 잘라내 가공해야할 때가 자주 있습니다.
+
+[example-4-2]
+employees 테이블에서 job_id 데이터 값의 첫째 자리부터 시작해서 두 개의 문자를 출력하세요.
+SELECT job_id, SUBSTR(job_id, 1, 2) FROM employees;
+
+✔ REPLACE : 특정 문자를 찾아 바꾸기
+REPLACE는 특정 문자열을 찾아 바꾸는 함수입니다. 사용자가 바꾸고자 하는 문자나 문자열을 지정하면 지정한 형태로 문자나 문자열이 바뀝니다.
+
+[example-4-3]
+employees 테이블에서 job_id 문자열 값이 ACCOUNT이면 ACCNT로 출력하세요.
+SELECT job_id, REPLACE(job_id, 'ACCOUNT', 'ACCNT') FROM employees;
